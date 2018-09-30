@@ -16,6 +16,8 @@ public class AntTest {
 		
 		System.out.println("locking");
 		
+		System.out.println("locking");
+		
 		System.out.println("today I updated");
 		
 		HashMap<Integer, String> s=new HashMap<Integer,String>();
