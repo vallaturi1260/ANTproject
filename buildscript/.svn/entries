@@ -1,0 +1,28 @@
+8
+
+dir
+5
+http://xpos/svn/CSA/branches/AntProject/AntProject/buildscript
+http://xpos/svn/CSA
+
+
+
+2015-09-13T10:31:51.640625Z
+5
+markonda
+
+
+svn:special svn:externals svn:needs-lock
+
+application.xml
+file
+
+
+
+
+2015-01-19T13:44:45.000000Z
+d41d8cd98f00b204e9800998ecf8427e
+2015-09-13T10:31:51.640625Z
+5
+markonda
+

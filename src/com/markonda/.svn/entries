@@ -1,0 +1,28 @@
+8
+
+dir
+5
+http://xpos/svn/CSA/branches/AntProject/AntProject/src/com/markonda
+http://xpos/svn/CSA
+
+
+
+2015-09-13T10:31:51.640625Z
+5
+markonda
+
+
+svn:special svn:externals svn:needs-lock
+
+AntTest.java
+file
+6
+
+
+
+2015-09-13T10:34:14.109375Z
+94e1339af94c560b70ea2f65d31fa523
+2015-09-13T10:34:37.109375Z
+6
+markonda
+

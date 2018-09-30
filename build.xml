@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Compile and runJava application" default="ear" basedir=".">
+
+	<property name="src.dir" value="src" />
+	<property name="build.dir" value="build/classes" />
+	<property name="dest.dir" value="dest" />
+	<property name="lib.dir" value="lib" />
+	<property name="ears.dir" value="ears" />
+	<property name="buildscript.dir" value="buildscript" />
+
+	<path id="classpath">
+		<pathelement path="${java.class.path}" />
+		<pathelement location="${build.dir}" />
+		<fileset dir="{lib}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	
+
+	<target name="clean">
+		<delete dir="${build.dir}" />
+		<delete dir="${dest.dir}" />
+		<delete dir="${ears.dir}" />
+		<echo>clean success</echo>
+	</target>
+	
+	<target name="prepare" depends="clean">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${dest.dir}" />
+		<mkdir dir="${ears.dir}" />
+		<echo>prepare success</echo>
+	</target>
+	<target name="compile" depends="prepare">
+		<javac includeantruntime="false" srcdir="${src.dir}" destdir="${build.dir}">
+		</javac>
+		<echo>compile success</echo>
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar jarfile="${dest.dir}/AntTest.jar" basedir="${build.dir}"/>
+		<echo>jar success</echo>
+	</target>
+
+	<target name="ear" depends="jar">
+		<ear destfile="${ears.dir}/AntBank.ear" appxml="${buildscript.dir}/application.xml">
+			<fileset dir="${dest.dir}">
+				<include name="AntTest.jar"/>
+			</fileset>
+		</ear>
+		<echo>ear success</echo>
+	</target>
+
+
+</project>
+<!-- 
+	<target name="run" depends="compile">
+		<java classname="com.markonda.AntTest">
+			<classpath path="build/classes"/>
+		</java>
+	</target>
+	<target name="compile">
+		<javac includeantruntime="false" srcdir="./src" destdir="build/classes"></javac>
+			<echo>compile is success</echo>
+	</target> 
+
+
+</project>
+	-->
+
+
+
+<!--
+
+<project name="AntProject" basedir="." default="main">
+
+	<property name="src.dir" value="src" />
+	<property name="build.dir" value="build" />
+	<property name="classes.dir" value="${build.dir}/classes" />
+	<property name="jar.dir" value="${build.dir}/jar" />
+	<property name="main.class" value="com.markonda.AntTest" />
+
+	<target name="clean">
+		<delete dir="${build.dir}" />
+		<echo>clear success</echo>
+	</target>
+
+	<target name="compile">
+		<mkdir dir="${classes.dir}" />
+		<javac includeantruntime="true" srcdir="${src.dir}" destdir="${classes.dir}" />
+		<echo>compile success</echo>
+	</target>
+
+	<target name="jar" depends="compile">
+		<mkdir dir="${jar.dir}" />
+		<jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="$classes.dir" />
+		<manifest>
+			<attribute name="Main-class" value="${main-class}" />
+		</manifest>
+		<echo>jar success</echo>
+	</target>
+
+	<target name="run" depends="jar">
+		<java jar="${jar.dir}/${ant.project.name}.jar" fork="true" />
+		<echo>run success</echo>
+	</target>
+
+	<target name="clean-build" depends="clean,jar" />
+	<target name="main" depends="clean,run" />
+
+
+</project>
+
+-->
