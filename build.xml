@@ -15,6 +15,7 @@
 		<fileset dir="{lib}">
 			<include name="**/*.jar" />
 		</fileset>
+		<echo> add echo statement</echo>
 	</path>
 
 	
@@ -24,6 +25,7 @@
 		<delete dir="${dest.dir}" />
 		<delete dir="${ears.dir}" />
 		<echo>clean success</echo>
+		<echo> add echo statement</echo>
 	</target>
 	
 	<target name="prepare" depends="clean">
