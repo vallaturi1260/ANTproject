@@ -15,7 +15,6 @@
 		<fileset dir="{lib}">
 			<include name="**/*.jar" />
 		</fileset>
-		<echo> add echo statement</echo>
 	</path>
 
 	
