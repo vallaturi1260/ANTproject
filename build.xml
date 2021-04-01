@@ -15,9 +15,7 @@
 		<fileset dir="{lib}">
 			<include name="**/*.jar" />
 		</fileset>
-	</path>
-
-	
+	</path>	
 
 	<target name="clean">
 		<delete dir="${build.dir}" />
@@ -33,6 +31,7 @@
 		<mkdir dir="${ears.dir}" />
 		<echo>prepare success</echo>
 	</target>
+	
 	<target name="compile" depends="prepare">
 		<javac includeantruntime="false" srcdir="${src.dir}" destdir="${build.dir}">
 		</javac>
@@ -48,6 +47,7 @@
 		<ear destfile="${ears.dir}/AntBank.ear" appxml="${buildscript.dir}/application.xml">
 			<fileset dir="${dest.dir}">
 				<include name="AntTest.jar"/>
+				
 			</fileset>
 		</ear>
 		<echo>ear success</echo>
@@ -55,6 +55,24 @@
 
 
 </project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- 
 	<target name="run" depends="compile">
 		<java classname="com.markonda.AntTest">
